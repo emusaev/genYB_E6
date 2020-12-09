@@ -1,0 +1,398 @@
+% Cadabra notebook version 1.2
+\documentclass[11pt]{article}
+\usepackage[textwidth=460pt, textheight=660pt]{geometry}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{amssymb}
+\usepackage[parfill]{parskip}
+\usepackage{breqn}
+\usepackage{tableaux}
+\def\specialcolon{\mathrel{\mathop{:}}\hspace{-.5em}}
+\renewcommand{\bar}[1]{\overline{#1}}
+\begin{document}
+{\color[named]{Blue}\begin{verbatim}
+::PostDefaultRules( @@collect_terms!(%) ).
+
+{M,N,K,L,P,Q,R,S,T,U,V, M#,N#}::Indices(name=curv27e6, position=independent).
+{m,n,k,l,p,q,r,t,u,v,m#,n#}::Indices(name=curv6, parent=curv27e6, position=independent).
+{fm,fn,fk,fl,fp,fq,fr,ft,fu,fv,fm#,fn#}::Indices(name=ecurv6f, parent=curv21, position=independent).
+{sm,sn,sk,sl,sp,sq,sr,st,su,sv,sm#,sn#}::Indices(name=ecurv6s, parent=curv21, position=independent).
+{em,en,ek,el,ep,eq,er,et,eu,ev,em#,en#}::Indices(name=ecurv6e, parent=curv21, position=independent).
+{\mu,\nu,\rho,\lambda,\mu#,\nu#}::Indices(name=curv15, position=independent).
+{rc,rc#}::Indices(name=curv21,parent=curv27e6, position=independent).
+
+{A,B,C,D,E,F,G,H, A#,B#}::Indices(name=flat27e6, position=independent).
+{a,b,c,d,e,f,g,h,a#,b#}::Indices(name=flat6, parent=flat27e6, position=independent).
+{fa,fb,fc,fd,fe,ff,fg,fh,fa#,fb#}::Indices(name=eflat6f, parent=flat21, position=independent).
+{sa,sb,sc,sd,se,sf,sg,sh,sa#,sb#}::Indices(name=eflat6s, parent=flat21, position=independent).
+{ea,eb,ec,ed,ee,ef,eg,eh,ea#,eb#}::Indices(name=eflat6e, parent=flat21, position=independent).
+{\alpha,\beta,\gamma,\delta,\alpha#,\beta#}::Indices(name=flat15, position=independent).
+{rf,rf#}::Indices(name=flat21, parent=flat27e6, position=independent).
+
+{M,N,K,L,P,Q,R,S,T,U,V, M#,N#}::Integer(1..27).
+{m,n,k,l,p,q,r,t,u,v,m#,n#}::Integer(1..6).
+{fm,fn,fk,fl,fp,fq,fr,ft,fu,fv,fm#,fn#}::Integer(1..6).
+{sm,sn,sk,sl,sp,sq,sr,st,su,sv,sm#,sn#}::Integer(1..6).
+{em,en,ek,el,ep,eq,er,et,eu,ev,em#,en#}::Integer(1..6).
+{\mu,\nu,\rho,\lambda,\mu#,\nu#}::Integer(1..15).
+{rc,rc#}::Integer(7..27).
+
+{A,B,C,D,E,F,G,H, A#,B#}:Integer(1..27).
+{a,b,c,d,e,f,g,h,a#,b#}::Integer(1..6).
+{fa,fb,fc,fd,fe,ff,fg,fh,fa#,fb#}::Integer(1..6).
+{sa,sb,sc,sd,se,sf,sg,sh,sa#,sb#}::Integer(1..6).
+{ea,eb,ec,ed,ee,ef,eg,eh,ea#,eb#}::Integer(1..6).
+{\alpha,\beta,\gamma,\delta,\alpha#,\beta#}::Integer(1..15).
+{rf,rf#}::Integer(7..27).
+
+Z^{A B}_{C}::TableauSymmetry(shape={2}, indices={0,1}).
+E^{m n A??}::TableauSymmetry(shape={1,1}, indices={0,1}).
+E_{m n A??}::TableauSymmetry(shape={1,1}, indices={0,1}).
+d^{M N}_{m n}::TableauSymmetry(shape={2}, indices={0,1}, shape={1,1}, indices={2,3}).
+d_{M N}^{m n}::TableauSymmetry(shape={2}, indices={0,1}, shape={1,1}, indices={2,3}).
+d_{M}^{p l m n}::TableauSymmetry(shape={1,1}, indices={1,2}, shape={1,1}, indices={3,4}).
+
+d_{A B C}::Symmetric:
+d^{A B C}::Symmetric:
+T^{p q}::AntiSymmetric:
+T^{a b}::AntiSymmetric:
+C_{k l m}::AntiSymmetric:
+C_{a b c}::AntiSymmetric:
+V^{k l m}::AntiSymmetric:
+V^{a b c}::AntiSymmetric:
+
+e_{m}^{a}::Vielbein:
+e^{m}_{a}::Vielbein:
+
+\delta{#}::KroneckerDelta.
+\epsilon{#}::EpsilonTensor( delta = \delta ):
+
+{T{#}, Z{#}, Zl{#}, Zf{#}, Zfl{#}, C{#}, V{#}, \epsilon{#}, de{#}, d{#}, Ee{#}, E{#}}::SortOrder.
+\end{verbatim}}
+% Begin TeX comment
+Assigning property PostDefaultRules.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning list property Indices to $\{M,\; N,\; K,\; L,\; P,\; Q,\; R,\; S,\; T,\; U,\; V,\; M\#,\; N\#\}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning list property Indices to $\{m,\; n,\; k,\; l,\; p,\; q,\; r,\; t,\; u,\; v,\; m\#,\; n\#\}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning list property Indices to $\{fm,\; fn,\; fk,\; fl,\; fp,\; fq,\; fr,\; ft,\; fu,\; fv,\; fm\#,\; fn\#\}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning list property Indices to $\{sm,\; sn,\; sk,\; sl,\; sp,\; sq,\; sr,\; st,\; su,\; sv,\; sm\#,\; sn\#\}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning list property Indices to $\{em,\; en,\; ek,\; el,\; ep,\; eq,\; er,\; et,\; eu,\; ev,\; em\#,\; en\#\}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning list property Indices to $\{\mu,\; \nu,\; \rho,\; \lambda,\; \mu\#,\; \nu\#\}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning list property Indices to $\{rc,\; rc\#\}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning list property Indices to $\{A,\; B,\; C,\; D,\; E,\; F,\; G,\; H,\; A\#,\; B\#\}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning list property Indices to $\{a,\; b,\; c,\; d,\; e,\; f,\; g,\; h,\; a\#,\; b\#\}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning list property Indices to $\{fa,\; fb,\; fc,\; fd,\; fe,\; ff,\; fg,\; fh,\; fa\#,\; fb\#\}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning list property Indices to $\{sa,\; sb,\; sc,\; sd,\; se,\; sf,\; sg,\; sh,\; sa\#,\; sb\#\}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning list property Indices to $\{ea,\; eb,\; ec,\; ed,\; ee,\; ef,\; eg,\; eh,\; ea\#,\; eb\#\}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning list property Indices to $\{\alpha,\; \beta,\; \gamma,\; \delta,\; \alpha\#,\; \beta\#\}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning list property Indices to $\{rf,\; rf\#\}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property Integer to $M$, $N$, $K$, $L$, $P$, $Q$, $R$, $S$, $T$, $U$, $V$, $M\#$, $N\#$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property Integer to $m$, $n$, $k$, $l$, $p$, $q$, $r$, $t$, $u$, $v$, $m\#$, $n\#$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property Integer to $fm$, $fn$, $fk$, $fl$, $fp$, $fq$, $fr$, $ft$, $fu$, $fv$, $fm\#$, $fn\#$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property Integer to $sm$, $sn$, $sk$, $sl$, $sp$, $sq$, $sr$, $st$, $su$, $sv$, $sm\#$, $sn\#$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property Integer to $em$, $en$, $ek$, $el$, $ep$, $eq$, $er$, $et$, $eu$, $ev$, $em\#$, $en\#$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property Integer to $\mu$, $\nu$, $\rho$, $\lambda$, $\mu\#$, $\nu\#$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property Integer to $rc$, $rc\#$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property Integer to $a$, $b$, $c$, $d$, $e$, $f$, $g$, $h$, $a\#$, $b\#$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property Integer to $fa$, $fb$, $fc$, $fd$, $fe$, $ff$, $fg$, $fh$, $fa\#$, $fb\#$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property Integer to $sa$, $sb$, $sc$, $sd$, $se$, $sf$, $sg$, $sh$, $sa\#$, $sb\#$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property Integer to $ea$, $eb$, $ec$, $ed$, $ee$, $ef$, $eg$, $eh$, $ea\#$, $eb\#$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property Integer to $\alpha$, $\beta$, $\gamma$, $\delta$, $\alpha\#$, $\beta\#$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property Integer to $rf$, $rf\#$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property TableauSymmetry to ${Z}^{A B}\,_{C}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property TableauSymmetry to ${E}^{m n A??}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property TableauSymmetry to ${E}_{m n A??}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property TableauSymmetry to ${d}^{M N}\,_{m n}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property TableauSymmetry to ${d}_{M N}\,^{m n}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property TableauSymmetry to ${d}_{M}\,^{p l m n}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property Symmetric to ${d}_{A B C}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property Symmetric to ${d}^{A B C}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property AntiSymmetric to ${T}^{p q}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property AntiSymmetric to ${T}^{a b}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property AntiSymmetric to ${C}_{k l m}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property AntiSymmetric to ${C}_{a b c}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property AntiSymmetric to ${V}^{k l m}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property AntiSymmetric to ${V}^{a b c}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property Vielbein to ${e}_{m}\,^{a}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property Vielbein to ${e}^{m}\,_{a}$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property KroneckerDelta to $\delta(\#)$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning property EpsilonTensor to $\epsilon(\#)$.
+\\
+% End TeX comment
+% Begin TeX comment
+Assigning list property SortOrder to $\{T(\#),\; Z(\#),\; Zl(\#),\; Zf(\#),\; Zfl(\#),\; C(\#),\; V(\#),\; \epsilon(\#),\; de(\#),\; d(\#),\; Ee(\#),\; E(\#)\}$.
+\\
+% End TeX comment
+{\color[named]{Blue}\begin{verbatim}
+ZeroCheck := Z^{A B}_{C} d_{A B D} T^{p q} (4 * Ee_{p}^{C} E_{q}^{D} - E^{k l C} E^{m n D} e**(-1) \epsilon_{k l m n p q} + 4 * Ee_{p}^{D} E_{q}^{C}):
+@distribute!!(%);
+\end{verbatim}}
+% orig
+% 4 Z^{A B}_{C} d_{A B D} T^{p q} Ee_{p}^{C} E_{q}^{D} - Z^{A B}_{C} d_{A B D} T^{p q} E^{k l C} E^{m n D} e**{-1} \epsilon_{k l m n p q} + 4 Z^{A B}_{C} d_{A B D} T^{p q} Ee_{p}^{D} E_{q}^{C}
+% end_orig
+\begin{dmath*}[compact, spread=2pt]
+ZeroCheck\specialcolon{}= 4\, {Z}^{A B}\,_{C} {d}_{A B D} {T}^{p q} {Ee}_{p}\,^{C} {E}_{q}\,^{D} - {Z}^{A B}\,_{C} {d}_{A B D} {T}^{p q} {E}^{k l C} {E}^{m n D} e{}^{-1} {\epsilon}_{k l m n p q} + 4\, {Z}^{A B}\,_{C} {d}_{A B D} {T}^{p q} {Ee}_{p}\,^{D} {E}_{q}\,^{C};
+\end{dmath*}
+{\color[named]{Blue}\begin{verbatim}
+@split_index!(%){A, a, rf}:
+@split_index!(%){rf, \alpha, eb}:
+@split_index!(%){A, a, rf}:
+@split_index!(%){rf, \alpha, eb}:
+@split_index!(%){A, a, rf}:
+@split_index!(%){rf, \alpha, eb}:
+@split_index!(%){A, a, rf}:
+@split_index!(%){rf, \alpha, eb}:
+@substitute!!(%)(
+d_{\alpha \beta \gamma} -> b_{\alpha \beta \gamma},
+d_{ea b \alpha} -> b_{ea b \alpha},
+d_{b ea \alpha} -> b_{ea b \alpha},
+d_{ea \alpha b} -> b_{ea b \alpha},
+d_{b \alpha ea} -> b_{ea b \alpha},
+d_{\alpha ea b} -> b_{ea b \alpha},
+d_{\alpha b ea} -> b_{ea b \alpha},
+b_{ea b \alpha} -> g_{ea}^{a} g_{\alpha c d} be_{a b}^{c d},
+b_{\alpha \beta \gamma} -> g_{\alpha a b} g_{\beta c d} g_{\gamma e f} b^{a b c d e f},
+b^{a b c d e f} -> 1/4 * s5 * \epsilon^{a b c d e f},
+be_{a b}^{c d} ->  1/2 * s5 * \delta_{a}^{c} \delta_{b}^{d} - 1/2 * s5 * \delta_{a}^{d} \delta_{b}^{c},
+):
+@substitute!!(%)(
+d_{C?? A?? B??} -> 0,
+):
+@substitute!!(%)(
+Z^{a \alpha}_{A??} -> Z^{\alpha a}_{A??},
+Z^{a ea}_{A??} -> Z^{ea a}_{A??},
+Z^{\alpha ea}_{A??} -> Z^{ea \alpha}_{A??},
+Z^{\alpha a}_{A??} -> g^{\alpha c d} Z_{c d}^{a}_{A??},
+Z^{eb a}_{A??} -> g^{eb}_{b} Zf^{b a}_{A??},
+Z^{eb \alpha}_{A??} -> g^{\alpha c d} g^{eb}_{b} Zf^{b}_{c d A??},
+Z_{c d}^{a}_{eb} -> g_{eb}^{b} Zl_{c d}^{a}_{b},
+Z_{c d}^{a}_{\alpha} -> g_{\alpha e f} Z_{c d}^{a e f},
+Zf^{b a}_{ec} -> g_{ec}^{c} Zfl^{b a}_{c},
+Zf^{b a}_{\alpha} -> g_{\alpha e f} Zf^{b a e f},
+Zf^{b}_{c d ea} -> g_{ea}^{a} Zfl^{b}_{c d a},
+Zf^{b}_{c d \alpha} -> g_{\alpha e f} Zf^{b}_{c d}^{e f},
+Z^{\alpha \beta}_{a} -> g^{\alpha c d} g^{\beta e f} Z_{c d e f a},
+Z^{\alpha \beta}_{ea} -> g^{\alpha c d} g^{\beta e f} g_{ea}^{a} Zl_{c d e f a},
+Z^{\alpha \beta}_{\gamma} -> g^{\alpha c d} g^{\beta e f} g_{\gamma a b} Z_{c d e f}^{a b},
+):
+@substitute!!(%)(
+E_{m}^{a} -> e_{m}^{a},
+E^{m n}^{a} -> 0,
+Ee_{m}^{a} -> 0,
+E_{m}^{\alpha} -> - s2 * g^{\alpha a b} e_{m}^{d} C_{d a b},
+E^{m n}^{\alpha} -> 1/2 * g^{\alpha a b} e^{m}_{a} e^{n}_{b} - 1/2 * g^{\alpha a b} e^{m}_{b} e^{n}_{a},
+Ee_{m}^{\alpha} -> 0,
+E_{m}^{ea} -> 1/2 * g^{ea}_{a} e_{m}^{a} U + 1/4 * g^{ea}_{a} e_{n}^{a} C_{m n1 n2} V^{n n1 n2},
+E^{m n}^{ea} -> - s2 * g^{ea}_{a} e^{m}_{c} e^{n}_{d} V^{a c d},
+Ee_{m}^{ea} -> e**(-1) g^{ea}_{a} e_{m}^{a},
+):
+@distribute!!(%):
+@substitute!!(%)(
+g^{ea}_{a} g_{ea}^{b} -> \delta_{a}^{b},
+g^{\alpha a b} g_{\alpha c d} -> \delta_{c}^{a} \delta_{d}^{b},
+s2 * s2 -> 1/2,
+s5 * s5 -> 1/5,
+):
+@eliminate_kr!!(%):
+@eliminate_vielbein!!(%):
+@epsprod2gendelta!!(%):
+@breakgendelta!!(%):
+@distribute!!(%):
+@eliminate_kr!!(%):
+@prodsort!!(%):
+@rename_dummies!(%):
+@canonicalise!!(%);
+\end{verbatim}}
+% orig
+% T^{a k} Zl_{b c}^{c}_{a} C_{k m n} V^{b m n} e**{-1} s5 - T^{a k} Zl_{b c}^{b}_{a} C_{k m n} V^{c m n} e**{-1} s5 - 8 T^{a b} Zfl^{c d}_{a} C_{b c d} e**{-1} s2 s5 - T^{a b} Zl_{c d e f a} C_{b g h} \epsilon^{c d e f g h} e**{-1} s2 s5 - 4 T^{a b} Zfl^{c}_{c a b} e**{-1} s5 + 4 T^{a b} Zfl^{c}_{a c b} e**{-1} s5 + T^{m n} Z_{a b}^{b c d} V^{a e f} \epsilon_{c d e f m n} e**{-1} s2 s5 - T^{m n} Z_{a b}^{a c d} V^{b e f} \epsilon_{c d e f m n} e**{-1} s2 s5 - 1/2 T^{m n} Zl_{a b}^{b}_{c} V^{a d e} V^{c f g} \epsilon_{d e f g m n} e**{-1} s5 + 1/2 T^{m n} Zl_{a b}^{a}_{c} V^{b d e} V^{c f g} \epsilon_{d e f g m n} e**{-1} s5 - 2 T^{m n} Zf^{a b c d} \epsilon_{a b c d m n} e**{-1} s5 + 2 T^{m n} Zfl^{a b}_{c} V^{c d e} \epsilon_{a b d e m n} e**{-1} s2 s5 - T^{m n} Z_{a b m n}^{a b} e**{-1} s5 + T^{m n} Z_{a m b n}^{a b} e**{-1} s5 - T^{m n} Z_{a m n b}^{a b} e**{-1} s5 + T^{m n} Z_{a b m n}^{b a} e**{-1} s5 - T^{m n} Z_{a m b n}^{b a} e**{-1} s5 + T^{m n} Z_{a m n b}^{b a} e**{-1} s5 - T^{m n} Z_{m a b n}^{a b} e**{-1} s5 + T^{m n} Z_{m a n b}^{a b} e**{-1} s5 + T^{m n} Z_{m a b n}^{b a} e**{-1} s5 - T^{m n} Z_{m a n b}^{b a} e**{-1} s5 - T^{m n} Z_{m n a b}^{a b} e**{-1} s5 + T^{m n} Z_{m n a b}^{b a} e**{-1} s5 + 2 T^{m n} Zl_{a b m n c} V^{a b c} e**{-1} s2 s5 - 2 T^{m n} Zl_{a m b n c} V^{a b c} e**{-1} s2 s5 + 2 T^{m n} Zl_{a m n b c} V^{a b c} e**{-1} s2 s5 + 2 T^{m n} Zl_{m a b n c} V^{a b c} e**{-1} s2 s5 - 2 T^{m n} Zl_{m a n b c} V^{a b c} e**{-1} s2 s5 + 2 T^{m n} Zl_{m n a b c} V^{a b c} e**{-1} s2 s5 + 4 T^{a b} Z_{a c}^{c}_{b} e**{-1} s5 - 4 T^{a b} Z_{c a}^{c}_{b} e**{-1} s5 - 4 T^{a b} Z_{a c}^{c d e} C_{b d e} e**{-1} s2 s5 + 4 T^{a b} Z_{c a}^{c d e} C_{b d e} e**{-1} s2 s5 + T^{a k} Zl_{a b}^{b}_{c} C_{k m n} V^{c m n} e**{-1} s5 - T^{a k} Zl_{b a}^{b}_{c} C_{k m n} V^{c m n} e**{-1} s5
+% end_orig
+\begin{dmath*}[compact, spread=2pt]
+ZeroCheck\specialcolon{}= {T}^{a k} {Zl}_{b c}\,^{c}\,_{a} {C}_{k m n} {V}^{b m n} e{}^{-1} s5 - {T}^{a k} {Zl}_{b c}\,^{b}\,_{a} {C}_{k m n} {V}^{c m n} e{}^{-1} s5 - 8\, {T}^{a b} {Zfl}^{c d}\,_{a} {C}_{b c d} e{}^{-1} s2 s5 - {T}^{a b} {Zl}_{c d e f a} {C}_{b g h} {\epsilon}^{c d e f g h} e{}^{-1} s2 s5 - 4\, {T}^{a b} {Zfl}^{c}\,_{c a b} e{}^{-1} s5 + 4\, {T}^{a b} {Zfl}^{c}\,_{a c b} e{}^{-1} s5 + {T}^{m n} {Z}_{a b}\,^{b c d} {V}^{a e f} {\epsilon}_{c d e f m n} e{}^{-1} s2 s5 - {T}^{m n} {Z}_{a b}\,^{a c d} {V}^{b e f} {\epsilon}_{c d e f m n} e{}^{-1} s2 s5 - \frac{1}{2}\, {T}^{m n} {Zl}_{a b}\,^{b}\,_{c} {V}^{a d e} {V}^{c f g} {\epsilon}_{d e f g m n} e{}^{-1} s5 + \frac{1}{2}\, {T}^{m n} {Zl}_{a b}\,^{a}\,_{c} {V}^{b d e} {V}^{c f g} {\epsilon}_{d e f g m n} e{}^{-1} s5 - 2\, {T}^{m n} {Zf}^{a b c d} {\epsilon}_{a b c d m n} e{}^{-1} s5 + 2\, {T}^{m n} {Zfl}^{a b}\,_{c} {V}^{c d e} {\epsilon}_{a b d e m n} e{}^{-1} s2 s5 - {T}^{m n} {Z}_{a b m n}\,^{a b} e{}^{-1} s5 + {T}^{m n} {Z}_{a m b n}\,^{a b} e{}^{-1} s5 - {T}^{m n} {Z}_{a m n b}\,^{a b} e{}^{-1} s5 + {T}^{m n} {Z}_{a b m n}\,^{b a} e{}^{-1} s5 - {T}^{m n} {Z}_{a m b n}\,^{b a} e{}^{-1} s5 + {T}^{m n} {Z}_{a m n b}\,^{b a} e{}^{-1} s5 - {T}^{m n} {Z}_{m a b n}\,^{a b} e{}^{-1} s5%
+ + {T}^{m n} {Z}_{m a n b}\,^{a b} e{}^{-1} s5 + {T}^{m n} {Z}_{m a b n}\,^{b a} e{}^{-1} s5 - {T}^{m n} {Z}_{m a n b}\,^{b a} e{}^{-1} s5 - {T}^{m n} {Z}_{m n a b}\,^{a b} e{}^{-1} s5 + {T}^{m n} {Z}_{m n a b}\,^{b a} e{}^{-1} s5 + 2\, {T}^{m n} {Zl}_{a b m n c} {V}^{a b c} e{}^{-1} s2 s5 - 2\, {T}^{m n} {Zl}_{a m b n c} {V}^{a b c} e{}^{-1} s2 s5 + 2\, {T}^{m n} {Zl}_{a m n b c} {V}^{a b c} e{}^{-1} s2 s5 + 2\, {T}^{m n} {Zl}_{m a b n c} {V}^{a b c} e{}^{-1} s2 s5 - 2\, {T}^{m n} {Zl}_{m a n b c} {V}^{a b c} e{}^{-1} s2 s5 + 2\, {T}^{m n} {Zl}_{m n a b c} {V}^{a b c} e{}^{-1} s2 s5 + 4\, {T}^{a b} {Z}_{a c}\,^{c}\,_{b} e{}^{-1} s5 - 4\, {T}^{a b} {Z}_{c a}\,^{c}\,_{b} e{}^{-1} s5 - 4\, {T}^{a b} {Z}_{a c}\,^{c d e} {C}_{b d e} e{}^{-1} s2 s5 + 4\, {T}^{a b} {Z}_{c a}\,^{c d e} {C}_{b d e} e{}^{-1} s2 s5 + {T}^{a k} {Zl}_{a b}\,^{b}\,_{c} {C}_{k m n} {V}^{c m n} e{}^{-1} s5 - {T}^{a k} {Zl}_{b a}\,^{b}\,_{c} {C}_{k m n} {V}^{c m n} e{}^{-1} s5;
+\end{dmath*}
+{\color[named]{Blue}\begin{verbatim}
+@substitute!!(%)(
+C_{k m n} T^{a k} V^{b m n} -> C_{c d e} T^{a c} V^{b d e},
+Z_{a m n b}^{a b} -> - Z_{a m b n}^{a b},
+Z_{a m b n}^{b a} -> - Z_{a m b n}^{a b},
+Z_{a m n b}^{b a} -> Z_{a m b n}^{a b},
+Z_{m a n b}^{a b} -> Z_{a m b n}^{a b},
+Z_{m a n b}^{b a} -> - Z_{a m b n}^{a b},
+Z_{a b m n}^{b a} -> - Z_{m n a b}^{a b},
+Z_{m a b n}^{a b} -> - Z_{a m b n}^{a b},
+Z_{m a b n}^{b a} -> Z_{a m b n}^{a b},
+Z_{a b m n}^{a b} -> Z_{m n a b}^{a b},
+Z_{a b m n}^{b a} -> - Z_{m n a b}^{a b},
+Z_{m n a b}^{b a} -> - Z_{m n a b}^{a b},
+Zl_{a m n b c} -> - Zl_{a m b n c},
+Zl_{m a b n c} -> - Zl_{a m b n c},
+Zl_{m a n b c} -> Zl_{a m b n c},
+Zl_{a b m n c} -> Zl_{m n a b c},
+T^{m n} \epsilon_{a b c d m n} -> T^{e  f} \epsilon_{a b c d e f},
+T^{m n} Z_{a m b n}^{a b} -> T^{c d} Z_{a c b d}^{a b},
+T^{m n} Z_{m n a b}^{a b} -> T^{c d} Z_{c d a b}^{a b},
+T^{m n} Zl_{a b m n e} -> T^{c d} Zl_{a b c d e},
+T^{m n} Zl_{a m b n e} -> T^{c d} Zl_{a c b d e},
+T^{m n} Zl_{m n a b e} -> T^{c d} Zl_{c d a b e},
+Zl_{c b}^{c}_{a} -> - Zl_{b c}^{c}_{a},
+Z_{c b}^{c}_{a} -> - Z_{b c}^{c}_{a},
+Zfl^{c}_{b c a} -> - Zfl^{c}_{c b a},
+Zfl^{c d}_{c} -> - Zfl^{d c}_{c},
+Z_{c d}^{c e f} -> - Z_{d c}^{c e f},
+V^{a b c} -> 1/6 * \epsilon^{a b c d e f} C_{d e f},
+e**(-1) -> 1,
+):
+@epsprod2gendelta!!(%):
+@breakgendelta!!(%):
+@distribute!!(%):
+@eliminate_kr!!(%):
+@prodsort!!(%):
+@rename_dummies!(%):
+@canonicalise!!(%):
+@substitute!!(%)(
+Zfl^{c d}_{c} -> - Zfl^{d c}_{c},
+Z_{c d}^{d e c} -> - Z_{c d}^{d c e},
+):
+@rename_dummies!(%):
+@canonicalise!!(%);
+\end{verbatim}}
+% orig
+% 1/3 T^{a a1} Zl_{b c}^{c}_{a} C_{a1 d e} C_{f g h} \epsilon^{b d e f g h} s5 - T^{a b} Zl_{c d e f a} C_{b g h} \epsilon^{c d e f g h} s2 s5 - 8 T^{a b} Zfl^{c}_{c a b} s5 + 8 T^{a b} Z_{c d}^{d c e} C_{a b e} s2 s5 + 2/3 T^{a a1} Zl_{b c}^{c}_{d} C_{a a1 e} C_{f g h} \epsilon^{b d e f g h} s5 - 1/3 T^{a a1} Zl_{a b}^{b}_{c} C_{a1 d e} C_{f g h} \epsilon^{c d e f g h} s5 - 2 T^{a b} Zf^{c d e f} \epsilon_{a b c d e f} s5 - 8 T^{a b} Zfl^{c d}_{d} C_{a b c} s2 s5 - 4 T^{a b} Z_{a b c d}^{c d} s5 + 8 T^{a b} Z_{c a d b}^{c d} s5 + 2/3 T^{a b} Zl_{a b c d e} C_{f g h} \epsilon^{c d e f g h} s2 s5 - 4/3 T^{a b} Zl_{c a d b e} C_{f g h} \epsilon^{c d e f g h} s2 s5 + 8 T^{a b} Z_{a c}^{c}_{b} s5
+% end_orig
+\begin{dmath*}[compact, spread=2pt]
+ZeroCheck\specialcolon{}= \frac{1}{3}\, {T}^{a a1} {Zl}_{b c}\,^{c}\,_{a} {C}_{a1 d e} {C}_{f g h} {\epsilon}^{b d e f g h} s5 - {T}^{a b} {Zl}_{c d e f a} {C}_{b g h} {\epsilon}^{c d e f g h} s2 s5 - 8\, {T}^{a b} {Zfl}^{c}\,_{c a b} s5 + 8\, {T}^{a b} {Z}_{c d}\,^{d c e} {C}_{a b e} s2 s5 + \frac{2}{3}\, {T}^{a a1} {Zl}_{b c}\,^{c}\,_{d} {C}_{a a1 e} {C}_{f g h} {\epsilon}^{b d e f g h} s5 - \frac{1}{3}\, {T}^{a a1} {Zl}_{a b}\,^{b}\,_{c} {C}_{a1 d e} {C}_{f g h} {\epsilon}^{c d e f g h} s5 - 2\, {T}^{a b} {Zf}^{c d e f} {\epsilon}_{a b c d e f} s5 - 8\, {T}^{a b} {Zfl}^{c d}\,_{d} {C}_{a b c} s2 s5 - 4\, {T}^{a b} {Z}_{a b c d}\,^{c d} s5 + 8\, {T}^{a b} {Z}_{c a d b}\,^{c d} s5 + \frac{2}{3}\, {T}^{a b} {Zl}_{a b c d e} {C}_{f g h} {\epsilon}^{c d e f g h} s2 s5 - \frac{4}{3}\, {T}^{a b} {Zl}_{c a d b e} {C}_{f g h} {\epsilon}^{c d e f g h} s2 s5 + 8\, {T}^{a b} {Z}_{a c}\,^{c}\,_{b} s5;
+\end{dmath*}
+\end{document}
